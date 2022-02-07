@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv"
+    android:textColor="@color/white"
+    android:layout_width="fill_parent"
+    android:fontFamily="@font/montserrat"
+    android:padding="8dp"
+    android:background="@drawable/shape"
+    android:layout_height="70dp"/>

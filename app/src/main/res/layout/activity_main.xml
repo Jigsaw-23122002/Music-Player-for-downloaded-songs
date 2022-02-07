@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="250"
+            android:background="@drawable/grey"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="0dp"
+                android:paddingTop="15dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="8dp"
+                app:srcCompat="@drawable/spotify" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.01"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="0dp"
+                android:paddingTop="20dp"
+                android:text="Hi Harsh"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/Songs"
+            android:layout_width="match_parent"
+            android:layout_height="580dp"
+            android:layout_weight="4"
+            android:background="@drawable/background_image"
+            android:cacheColorHint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/SongSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey"
+                android:progressTint="#1DB954" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/grey"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/CurrentSong"
+                    android:layout_width="335dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.35"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="10dp"
+                    android:text="Songs"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/backward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/backward" />
+
+                <ImageView
+                    android:id="@+id/forward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="0dp"
+                    app:srcCompat="@drawable/forward" />
+
+                <ImageView
+                    android:id="@+id/PlayPause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="20dp"
+                    app:srcCompat="@drawable/play" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
