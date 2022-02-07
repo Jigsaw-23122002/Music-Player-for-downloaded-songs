@@ -5,6 +5,8 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -14,6 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
@@ -32,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     ImageView PlayPause;
     int count = -1;
+    AudioManager audioManager;
+    SeekBar VolumeSeekBar;
+    ImageButton LoopingButton;
+    Boolean loopStatus = false;
+    TextView LoopingText;
     //........................................................End of globally used variables
 
 
@@ -111,6 +119,17 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.custom_layout,songs);
         listView.setAdapter(arrayAdapter);
 
+
+        VolumeSeekBar = findViewById(R.id.VolumeSeekBar);
+        audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+        int maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        VolumeSeekBar.setMax(maxVolume);
+
+        LoopingButton = findViewById(R.id.LoopingButton);
+
+        LoopingText = (TextView)findViewById(R.id.LoopingText);
+        LoopingText.setTextColor(Integer.parseInt(String.valueOf(Color.parseColor("#FF0000"))));
+
         SeekBar SongSeekBar = findViewById(R.id.SongSeekBar);
         PlayPause = (ImageView) findViewById(R.id.PlayPause);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -131,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         SongSeekBar.setProgress(mediaPlayer.getCurrentPosition());
                         if(mediaPlayer!=null){
-                            mediaPlayer.setLooping(true);
+                            mediaPlayer.setLooping(loopStatus);
                         }
                     }
                 },0,1000);
@@ -203,7 +222,38 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         //......................................End of forward and backward button
+
+        VolumeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,progress,0);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+        LoopingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(loopStatus == true){
+                    LoopingText.setTextColor(Integer.parseInt(String.valueOf(Color.parseColor("#FF0000"))));
+                    loopStatus = false;
+                }
+                else{
+                    LoopingText.setTextColor(Integer.parseInt(String.valueOf(Color.parseColor("#1DB954"))));
+                    loopStatus = true;
+                }
+            }
+        });
     }
 }

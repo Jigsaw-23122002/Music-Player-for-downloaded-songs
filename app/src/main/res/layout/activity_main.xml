@@ -45,7 +45,7 @@
             android:id="@+id/Songs"
             android:layout_width="match_parent"
             android:layout_height="580dp"
-            android:layout_weight="4"
+            android:layout_weight="20"
             android:background="@drawable/background_image"
             android:cacheColorHint="@color/white" />
 
@@ -74,7 +74,7 @@
                     android:layout_weight="0.35"
                     android:fontFamily="@font/montserrat"
                     android:paddingLeft="10dp"
-                    android:paddingTop="5dp"
+                    android:paddingTop="10dp"
                     android:paddingRight="10dp"
                     android:text="Songs"
                     android:textColor="@color/white" />
@@ -106,6 +106,61 @@
 
             </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="250"
+            android:background="@drawable/grey"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:text="Volume"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <SeekBar
+                    android:id="@+id/VolumeSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingBottom="5dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/LoopingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.01"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="20dp"
+                android:paddingTop="16dp"
+                android:text="looping"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/LoopingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="@drawable/grey"
+                app:srcCompat="@android:drawable/ic_menu_revert" />
         </LinearLayout>
 
     </LinearLayout>
