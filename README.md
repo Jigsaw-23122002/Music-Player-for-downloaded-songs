@@ -1,4 +1,4 @@
-# DOWNLOADED-SONG-MUSIC-PLAYER
+# MUSIC-PLAYER-FOR-DOWNLOADED-SONGS
 <br>
 
 * This android app is made using android studios with the help of Java.
