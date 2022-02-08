@@ -9,6 +9,7 @@
   * One can turn on the looping of the songs through the button present in the bottom right.If the color of text is green then the looping is on and if its red then the looping is off.
   * One can change the song in forward or backward sequence and can also pause the currenly running song by the three arraw buttons given in the botton right corner
   * One can move to the desired progress of the song by clicking on the seekbar of the progress of the song
+  * Also If the song is playing and if someone calls then the song automatically gets paused and on the end of the call the song continues to play.
 <br>
 <br>
 
