@@ -1,4 +1,4 @@
-package com.example.main;
+package com.example.stream;
 
 import org.junit.Test;
 
